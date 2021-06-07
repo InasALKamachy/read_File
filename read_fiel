@@ -12,3 +12,13 @@ with open('how_many_lines.txt') as lines_doc:
  with open('just_the_first.txt') as first_line_doc:
   first_line = first_line_doc.readline()
 print(first_line)
+
+#Get email from CSV file
+
+import csv
+ 
+list_of_email_addresses = []
+with open('users.csv', newline='') as users_csv:
+  user_reader = csv.DictReader(users_csv)
+  for row in user_reader:
+    list_of_email_addresses.append(row['Email'])
